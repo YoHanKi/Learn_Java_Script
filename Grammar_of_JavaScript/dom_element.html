@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body> 
+        <!-- id 요소 생성하여 getElementById 사용 예제-->
+        <input type="text" id="userid" />
+        <p>태그명을 사용하여 HTML 요소를 찾습니다.</p>
+
+        <!-- 태그명을 getElementById 사용 예제-->
+        <p>HTML 요소에 대한 접근</p>
+        <p>태그명을 사용하여 HTML 요소를 찾습니다.</p>
+        
+        <!-- 클래스명을 getElementsByClassName 사용 예제-->
+        <p class="para">HTML 요소에 대한 접근</p>
+        <p class="para">
+            클래스명을 사용하여 HTML 요소를 찾습니다.
+        </p>
+        <script>
+            //(id) 요소를 HTML에서 찾아 반환 -> 없을 시 null 반환
+            let element = document.getElementById("userid");
+
+            //태그명을 HTML 에서 찾아 반환
+            let element1 = document.getElementById("p");
+
+            //클래스명을 HTML 에서 찾아 반환
+            let element2 = document.getElementsByClassName("para");
+        </script>
+    </body>
+</html>

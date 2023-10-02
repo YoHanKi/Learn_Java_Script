@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+        <!--입력한 데이터는 DOM 요소에 value 에 저장되며 getElementById로 접근할 수 있다
+        getAttribute로 속성을 읽고 변경할 수 있다.-->
+        <input type="text" id="text1" value="ABC" />
+        <script>
+            let oText1 = document.getElementById("text1");
+            let textValue = oText1.value;
+            console.log(textValue);
+            console.log(document.getElementById("text1").getAttribute("value"));
+        </script>
+    </body>
+</html>

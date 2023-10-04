@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+        <!--addEventListener 사용 예시-->
+        <button onclick="myFunction();">클릭</button>
+        <button id="btn">클릭</button>
+        <button id="btn2">클릭</button>
+
+        <!--onChange => 지정 태그에 변화가 생겼을 경우 이벤트 발생 예시-->
+        <select id="select1" onchange="doChange();">
+            <option value="KO">Korea</option>
+            <option value="CN">China</option>
+            <option value="JP">Japan</option>
+        </select>
+        <script>
+            function myFunction() {
+                console.log("onclick 이벤트 설정");
+            }
+            function myFunction() {
+                console.log("이벤트 리스너 사용");
+            }
+            //getElement로 value를 반환, addEventListener을 사용하여 클릭 이벤트 사용
+            document.getElementById("btn").addEventListener("click", myFunction);
+            document.getElementById("btn2").addEventListener("click", function() {
+                console.log("이벤트 함수 발생");
+            });
+            
+            //onChange 메소드 호출, getElement 함수로 변화를 감지, 이벤트 발생
+            function doChange() {
+                let selectedValue = document.getElementById("select1").value;
+            }
+            //onFocus, onBlur, key(down, press, up) 등 이벤트 존재
+        </script>
+    </body>
+</html>

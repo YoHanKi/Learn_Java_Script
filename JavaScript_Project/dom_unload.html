@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+        <script>
+            //onload는 브라우저 창을 닫거나 다른 웹사이트로 이동 시 자동으로 로그아웃하는 기능을 실행
+            //할 수 있다. 또한 선언한 변수 중 메모리 공간을 많이 차지하는 변수를 null로 설정할 수 있다.
+            let nums = [1,2,3];
+
+            window.addEventListener("unload", function() {
+                nums = null;
+            });
+        </script>
+    </body>
+</html>

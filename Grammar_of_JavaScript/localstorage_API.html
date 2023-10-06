@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+        <script>
+            //HTML5 에서 추가된 웹 브라우저 저장소(node.js 환경에서는 작동하지 않는다)
+            //보안에 위배되지 않고, 영구히 저장해도 상관없는 데이터를 저장할때 적합
+            if(typeof Storage !== "undefined") {
+                //스토리지 사용 여부 체크
+                localStorage.setItem("title","The Great"); //key 와 value 순
+
+                const users = [
+                    {id:1, name: "Hyeok"},
+                    {id:2, name: "Yohan"},
+                ];
+                localStorage.setItem("users", JSON.stringify("users"));
+            }
+            if(typeof Storage !== "undefined") {
+                console.log(localStorage.getItem("title"));
+                console.log(JSON.parse(localStorage.getItem("users")));
+                //이전 stringify로 문자열로 변환했기 때문에 parse를 사용하여 배열로 변환
+            }
+
+            /*localStorage.removeItem("title"); 저장할때 사용한 key로 삭제*/
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+        <script>
+            //로컬과 반대로 중요한 정보와 전송 파라미터양이 많을 경우
+            if(typeof Storage !== "undefined") {
+                sessionStorage.setItem("title","The great");
+                
+                const users = [
+                    {id:1, name:"Hyeok"},
+                    {id:2, name:"Yohan"},
+                ];
+                sessionStorage.setItem("users", JSON.stringify("users"));
+            }
+            if(typeof Storage !== "undefined") {
+                console.log(sessionStorage.getItem("title"));
+                console.log(sessionStorage.getItem("users",JSON.parse("users")));
+            }
+            /*sessionStorage.removeItem("title");*/
+
+        </script>
+    </body>
+</html>

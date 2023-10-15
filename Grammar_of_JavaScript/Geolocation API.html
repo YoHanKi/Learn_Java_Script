@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+        <script>
+            /*geolocation 지원여부 확인*/
+            if('geolocation' in navigator) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const latitude = position.coords.latitude;//위도
+                    const longitude = position.coords.longitude; //경도
+                });
+                const watchID = navigator.geolocation.watchPosition((position) => {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                });
+                //사용자 위치 정보를 사용하지 않을경우, 반드시 종료해야함
+                navigator.geolocation.clearWatch(watchID);
+            } else {
+                /*geolocation 브라우저 미지원*/
+            }
+        </script>
+    </body>
+</html>

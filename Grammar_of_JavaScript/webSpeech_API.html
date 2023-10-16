@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>title</title>
+    </head>
+    <body>
+        <input type="text" id="speech_result"/>
+        <button type="button" onclick="startSpeechRecognition();">Start Record</button>
+        <button type="button" onclick="endSpeechRecognition();">Stop Record</button>
+        <script>
+            let recognition = null;
+            function checkCompatibility() {
+                recognition = new SpeechRecognition();
+
+                if(!recognition) { //미지원 시
+                    alert("you cannot use speech api");
+                }
+
+                recognition.lang = "en"; //사용언어
+                recognition.maxAlternatives = 3;
+            }
+
+            function startSpeechRecognition() {
+                recognition.addEventListener("speechstart", () => {
+                    //음성 시작
+                    console.log("Speech Start");
+                });
+
+                recognition.addEventListener("speechend", () => {
+                    //음성 종료
+                    console.log("Speech End");
+                });
+
+                recognition.addEventListener("result", () => {
+                    //음성결과 가져오기
+                    console.log("Speech Result", event.results);
+                    const text = event.results[0][0].transcript;
+                    document.getElementById("speech_result").value = text;
+                });
+
+                recognition.start();
+            }
+
+            function endSpeechRecognition() {
+                recognition.stop();
+            }
+
+            window.addEventListener('load', checkCompatibility);
+        </script>
+    </body>
+</html>
